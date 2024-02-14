@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sunnyside Agency Landing Page solution for Frontendmentor.io junior challenge">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Sunnyside agency landing page</title>
@@ -20,22 +21,29 @@
         <img class="toggle-icon" src="./images/icon-hamburger.svg" alt="" aria-hidden="true">
       </button>
 
-      <ul id="navList">
-        <li class="chevron"></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Project</a></li>
-        <li>
-          <button type="button">CONTACT</button>
-        </li>
-      </ul>
+      <div id="navList" class="list-container">
+        <ul>
+          <li class="chevron"></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Project</a></li>
+          <li>
+            <button type="button">CONTACT</button>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <main>
     <div class="hero">
-      <h1 class="hero__title">We are creatives</h1>
-      <img src="./images/icon-arrow-down.svg" alt="">
+      <picture>
+        <source media="(max-width: 767px)" srcset="./images/mobile/image-header.jpg" type="image/jpg">
+        <source media="(min-width: 768px)" srcset="./images/desktop/image-header.jpg" type="image/jpg">
+        <img src="./images/mobile/image-header.jpg" alt="cross section of an orange">
+      </picture>
+      <h1 class="hero__title">WE ARE CREATIVES</h1>
+      <img class="hero__arrow" src="./images/icon-arrow-down.svg" alt="">
     </div>
 
     <div class="services">
@@ -82,7 +90,6 @@
           <p class="content__text-body">Great design makes you memorable. We deliver artwork that underscores your brand
             message and captures potential
             clients’ attention.</p>
-          <button class="content__text-cta" type="button">LEARN MORE</button>
         </div>
       </div>
 
@@ -97,20 +104,19 @@
           <h2 class="content__text-title">Photography</h2>
           <p class="content__text-body">Increase your credibility by getting the most stunning, high-quality photos that
             improve your business image.</p>
-          <button class="content__text-cta" type="button">LEARN MORE</button>
         </div>
       </div>
     </div>
 
     <div class="testimonials">
-      <h2 class="testimonials__title">Client testimonials</h2>
+      <h2 class="testimonials__title">CLIENT TESTOMNIALS</h2>
 
       <div class="testimonials__container">
         <img class="testimonials__avatar" src="./images/image-emily.jpg" alt="avatar">
         <p class="testimonials__text">We put our trust in Sunnyside and they delivered, making sure our needs were met
           and deadlines were always
           hit.</p>
-        <div class="testimonials__subcontainer">
+        <div>
           <p class="testimonials__name">Emily R.</p>
           <p class="testimonials__position">Marketing Director</p>
         </div>
@@ -121,7 +127,7 @@
         <p class="testimonials__text">Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success
           made it a satisfying and enjoyable
           experience.</p>
-        <div class="testimonials__subcontainer">
+        <div>
           <p class="testimonials__name">Thomas S.</p>
           <p class="testimonials__position">Chief Operating Officer</p>
         </div>
@@ -131,7 +137,7 @@
         <img class="testimonials__avatar" src="./images/image-jennie.jpg" alt="avatar">
         <p class="testimonials__text">Incredible end result! Our sales increased over 400% when we worked with
           Sunnyside. Highly recommended!</p>
-        <div class="testimonials__subcontainer">
+        <div>
           <p class="testimonials__name">Jennie F.</p>
           <p class="testimonials__position">Business Owner</p>
         </div>
@@ -182,18 +188,28 @@
       </ul>
     </nav>
 
+    <div class="socials">
+      <a href="https://www.facebook.com/">
+        <img src="./images/icon-facebook.svg" alt="facebook">
+      </a>
+      <a href="https://www.instagram.com/">
+        <img src="./images/icon-instagram.svg" alt="instagram">
+      </a>
+      <a href="https://twitter.com/">
+        <img src="./images/icon-twitter.svg" alt="twitter">
+      </a>
+      <a href="https://www.pinterest.com/">
+        <img src="./images/icon-pinterest.svg" alt="pinterest">
+      </a>
+    </div>
+
     <div class="attribution">
       <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
       <p>Coded by <a href="#">Hadree Mustaffa</a>.</p>
     </div>
-
-    <div class="socials">
-      <img src="./images/icon-facebook.svg" alt="facebook">
-      <img src="./images/icon-instagram.svg" alt="instagram">
-      <img src="./images/icon-twitter.svg" alt="twitter">
-      <img src="./images/icon-pinterest.svg" alt="pinterest">
-    </div>
   </footer>
+
+  <script src="index.js"></script>
 </body>
 
 </html>
