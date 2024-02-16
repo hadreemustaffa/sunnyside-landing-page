@@ -136,7 +136,7 @@ header {
   position: fixed;
   top: 0;
   z-index: 20;
-  opacity: background-color 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 #primaryNav a {
@@ -271,11 +271,16 @@ main {
 .content__text-title {
   font-family: var(--ff-heading);
   font-size: var(--fs-heading-2);
+  font-weight: var(--fw-black);
+  color: var(--clr-neutral-darkest);
   line-height: 1.25;
 }
 
 .content__text-cta {
   width: fit-content;
+  color: var(--clr-neutral-darkest);
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-black);
   background-color: transparent;
   border: transparent;
   position: relative;
@@ -320,8 +325,12 @@ main {
   gap: 1rem;
 }
 
-.services__content:nth-of-type(3) .content__text {
+.services__content:nth-of-type(3) .content__text-title {
   color: var(--clr-primary-3);
+}
+.services__content:nth-of-type(3) .content__text-body {
+  color: var(--clr-primary-3);
+  opacity: 0.8;
 }
 
 .services__content:last-of-type .content__text {
@@ -336,10 +345,9 @@ main {
 }
 
 .testimonials {
-  max-width: 1000px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
   justify-content: center;
   padding: 4rem 1rem;
 }
@@ -353,7 +361,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   padding: 1rem;
 }
 .testimonials__avatar {
@@ -483,6 +491,10 @@ footer .socials {
 }
 
 @media (min-width: 48rem) {
+  header {
+    position: absolute;
+  }
+
   #primaryNav a {
     color: var(--clr-neutral-lighter);
   }
@@ -520,6 +532,7 @@ footer .socials {
   }
 
   .testimonials {
+    padding: 8rem 1rem;
     display: grid;
     margin: 0 auto;
     grid-template-columns: auto auto auto;
