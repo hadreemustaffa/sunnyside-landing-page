@@ -223,10 +223,6 @@ main {
   top: 50%;
 }
 
-.content__text {
-  max-width: 50ch;
-}
-
 .services {
   display: grid;
   grid-template-columns: subgrid;
@@ -247,15 +243,61 @@ main {
 }
 .services__content:nth-of-type(3) {
   background-image: url('./images/mobile/image-graphic-design.jpg');
-  background-size: cover;
   grid-column: 1;
   grid-row: 3;
 }
 .services__content:last-of-type {
   background-image: url('./images/mobile/image-photography.jpg');
-  background-size: cover;
   grid-column: 2;
   grid-row: 4;
+}
+.services__content:nth-of-type(3),
+.services__content:last-of-type {
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1.35;
+  background-position: center;
+  background-size: cover;
+}
+
+.services__content:first-of-type .content__text .content__text-cta::after {
+  background-color: var(--clr-primary-1);
+}
+.services__content:nth-of-type(2) .content__text .content__text-cta::after {
+  background-color: var(--clr-primary-2);
+}
+
+.services__content:nth-of-type(3) picture,
+.services__content:nth-of-type(3) .content__text,
+.services__content:last-of-type picture,
+.services__content:last-of-type .content__text {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+.services__content:nth-of-type(3) .content__text,
+.services__content:last-of-type .content__text {
+  grid-row: 2;
+  padding: 0 1rem 2rem;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.services__content:nth-of-type(3) .content__text-title,
+.services__content:nth-of-type(3) .content__text-body {
+  color: var(--clr-primary-3);
+}
+.services__content:nth-of-type(3) .content__text-body {
+  opacity: 0.8;
+}
+
+.services__content:last-of-type .content__text {
+  color: var(--clr-neutral-darkest);
+  opacity: 0.8;
+}
+
+.services__content img {
+  aspect-ratio: 1 / 1;
 }
 
 .content__text {
@@ -304,44 +346,9 @@ main {
   opacity: 1;
 }
 
-.services__content:first-of-type .content__text .content__text-cta::after {
-  background-color: var(--clr-primary-1);
-}
-.services__content:nth-of-type(2) .content__text .content__text-cta::after {
-  background-color: var(--clr-primary-2);
-}
-
-.services__content:nth-of-type(3) picture,
-.services__content:nth-of-type(3) .content__text,
-.services__content:last-of-type picture,
-.services__content:last-of-type .content__text {
-  grid-column: 1 / span 2;
-  grid-row: 1;
-}
-.services__content:nth-of-type(3) .content__text,
-.services__content:last-of-type .content__text {
-  padding: 25rem 1rem 4rem;
-  justify-content: start;
-  gap: 1rem;
-}
-
-.services__content:nth-of-type(3) .content__text-title {
-  color: var(--clr-primary-3);
-}
-.services__content:nth-of-type(3) .content__text-body {
-  color: var(--clr-primary-3);
-  opacity: 0.8;
-}
-
-.services__content:last-of-type .content__text {
-  color: var(--clr-neutral-darkest);
-  opacity: 0.8;
-}
-
-.services__content img,
-.gallery img {
-  width: 100%;
-  height: 100%;
+.content__text,
+.testimonials__text {
+  max-width: 45ch;
 }
 
 .testimonials {
@@ -371,7 +378,6 @@ main {
 }
 .testimonials__text {
   color: var(--clr-neutral-darker);
-  max-width: 35ch;
 }
 
 .testimonials__name {
@@ -388,6 +394,9 @@ main {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
+}
+.gallery img {
+  aspect-ratio: 1 / 1;
 }
 
 footer {
@@ -439,57 +448,6 @@ footer .socials {
   color: var(--clr-primary-3);
 }
 
-@media (min-width: 36rem) {
-  main {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .hero {
-    grid-column: 1 / span 2;
-  }
-
-  .services {
-    grid-column: 1 / span 2;
-  }
-
-  .services__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .services__content:first-of-type .content__text {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .services__content:first-of-type .content__text,
-  .services__content:nth-of-type(2) .content__text {
-    text-align: left;
-    align-items: start;
-  }
-
-  .services__content:nth-of-type(3) {
-    background-image: url('./images/desktop/image-graphic-design.jpg');
-    background-position: center;
-    grid-row: 3;
-  }
-  .services__content:last-of-type {
-    background-image: url('./images/desktop/image-photography.jpg');
-    background-position: center;
-    grid-column: 2;
-    grid-row: 3;
-  }
-
-  .testimonials {
-    grid-column: 1 / span 2;
-  }
-  .gallery {
-    grid-column: 1 / span 2;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
 @media (min-width: 48rem) {
   header {
     position: absolute;
@@ -531,6 +489,73 @@ footer .socials {
     display: none;
   }
 
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero {
+    grid-column: 1 / span 2;
+  }
+
+  .services {
+    grid-column: 1 / span 2;
+  }
+
+  .services__content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .services__content:first-of-type {
+    grid-row: 1;
+  }
+  .services__content:first-of-type picture {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .services__content:first-of-type .content__text {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .services__content:nth-of-type(2) {
+    grid-row: 2;
+  }
+  .services__content:nth-of-type(2) picture {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .services__content:nth-of-type(2) .content__text {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .services__content:first-of-type .content__text,
+  .services__content:nth-of-type(2) .content__text {
+    text-align: left;
+    align-items: start;
+  }
+
+  .services__content:nth-of-type(3) {
+    background-image: url('./images/desktop/image-graphic-design.jpg');
+    background-position: center;
+    grid-row: 3;
+  }
+  .services__content:last-of-type {
+    background-image: url('./images/desktop/image-photography.jpg');
+    background-position: center;
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .testimonials {
+    grid-column: 1 / span 2;
+  }
+  .gallery {
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .testimonials {
     padding: 8rem 1rem;
     display: grid;
@@ -544,6 +569,12 @@ footer .socials {
   }
   .testimonials__container {
     grid-row: 2;
+  }
+}
+
+@media (min-width: 78rem) {
+  .services {
+    grid-template-rows: repeat(3, 600px);
   }
 }
 
