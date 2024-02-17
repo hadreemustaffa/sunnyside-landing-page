@@ -13,7 +13,7 @@ navToggle.addEventListener('click', () => {
 });
 
 function isMobile() {
-  return window.matchMedia('(max-width: 768px)').matches;
+  return window.matchMedia('(max-width: 576px)').matches;
 }
 
 function darkenHeaderOnScroll() {
