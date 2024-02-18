@@ -123,6 +123,7 @@ body {
   color: var(--clr-neutral-dark);
   font-family: var(--ff-primary);
   font-weight: var(--fw-semibold);
+  font-size: var(--fs-body);
 }
 
 header {
@@ -208,10 +209,14 @@ main {
 
 .hero {
   grid-column: 1;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   position: relative;
+  background-image: url('./images/mobile/image-header.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .hero__title {
   position: absolute;
@@ -298,6 +303,7 @@ main {
 
 .services__content img {
   aspect-ratio: 1 / 1;
+  width: 100%;
 }
 
 .content__text {
@@ -448,6 +454,17 @@ footer .socials {
   color: var(--clr-primary-3);
 }
 
+@media (min-width: 36rem) {
+  .hero {
+    background-image: url('./images/desktop/image-header.jpg');
+  }
+
+  .services__content:nth-of-type(3),
+  .services__content:last-of-type {
+    aspect-ratio: 1;
+  }
+}
+
 @media (min-width: 48rem) {
   header {
     position: absolute;
@@ -573,8 +590,14 @@ footer .socials {
 }
 
 @media (min-width: 78rem) {
-  .services {
-    grid-template-rows: repeat(3, 600px);
+  :root {
+    --fs-xl: 2.5rem;
+    --fs-lg: 2.25rem;
+    --fs-md: 1.125rem;
+    --fs-sm: 0.825rem;
+  }
+  .content__text {
+    max-width: 50ch;
   }
 }
 
